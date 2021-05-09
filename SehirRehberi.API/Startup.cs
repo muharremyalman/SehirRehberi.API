@@ -33,6 +33,7 @@ namespace SehirRehberi.API
             services.AddMvc();
             services.AddControllers();
             services.AddCors();
+            services.AddScoped<IAppRepository, AppRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SehirRehberi.API", Version = "v1" });
