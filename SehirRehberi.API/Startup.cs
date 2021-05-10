@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 using SehirRehberi.API.Data;
 using System;
 using System.Collections.Generic;
@@ -30,7 +32,13 @@ namespace SehirRehberi.API
         {
             services.AddDbContext<DataContext>(x =>
             x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc();
+            services.AddAutoMapper();
+
+            services.AddMvc().AddNewtonsoftJson(o =>
+            {
+                o.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
+
             services.AddControllers();
             services.AddCors();
             services.AddScoped<IAppRepository, AppRepository>();
