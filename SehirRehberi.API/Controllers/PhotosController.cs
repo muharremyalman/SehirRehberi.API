@@ -37,6 +37,7 @@ namespace SehirRehberi.API.Controllers
         }
 
         [HttpPost]
+        [Obsolete]
         public ActionResult AddPhotoForCity(int cityId,[FromBody]PhotoForCreationDto photoForCreationDto)
         {
             var city = _appRepository.GetCityById(cityId);
