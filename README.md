@@ -1,9 +1,15 @@
-# SehirRehberi.API
 
 ## Database and Tables
 
 -  *ConnectionStrings and CloudinarySettings [from here](https://github.com/muharremyalman/SehirRehberi.API/blob/master/SehirRehberi.API/appsettings.json) set.*
 - [SqlQuery.sql](https://github.com/muharremyalman/SehirRehberi.API/blob/master/SQLQuery.sql) *(Create your table as you see in the link)*
+
+#### It is connected spa: [sehir-rehberi-spa](https://github.com/muharremyalman/sehir-rehberi-spa)
+
+![Admin Resmi](https://i.hizliresim.com/fulmp87.png)
+![Admin Resmi](https://i.hizliresim.com/e0avg3i.png)
+![Admin Resmi](https://i.hizliresim.com/sg0cas4.png)
+
 
 ### Nuget
 ```
